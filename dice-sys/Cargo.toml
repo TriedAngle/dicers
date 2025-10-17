@@ -1,0 +1,27 @@
+[package]
+name = "dice-sys"
+version = "0.1.0"
+edition = "2021"
+links = "dice"
+build = "build.rs"
+description = "Raw FFI bindings to the dice C library"
+
+[features]
+default = ["lto"]
+
+interpose-memcpy = []
+lto = []
+
+log-fatal = []
+log-info  = []
+log-debug = []
+
+san-thread = []                 # -> DICE_SANITIZER=thread
+san-address = []                # -> DICE_SANITIZER=address
+san-undefined = []              # -> DICE_SANITIZER=undefined
+
+[dependencies]
+libc = "0.2"
+
+[build-dependencies]
+cmake = "0.1"

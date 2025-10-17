@@ -1,0 +1,14 @@
+[package]
+name = "dicers"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "dicers"
+crate-type = ["cdylib"]
+
+[dependencies]
+ctor = "0.6.0"
+once_cell = "1"
+libc = "0.2"
+dice-sys = { path = "../dice-sys", version = "0.1.*" }
